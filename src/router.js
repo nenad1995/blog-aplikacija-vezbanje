@@ -5,11 +5,11 @@ import AppPosts from './components/AppPosts'
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/', redirect: '/posts' },
-    { path: '/posts', component: AppPosts, name: "posts" },
+  { path: '/', redirect: '/posts' },
+  { path: '/posts', component: AppPosts, name: "posts" },
 ]
 
 export const router = new VueRouter({
-    routes,
-    mode: 'history'
+  routes,
+  mode: 'history'
 })
