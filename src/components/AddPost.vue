@@ -1,21 +1,24 @@
 <template>
   <div>
-    <form @submit.prevent="onSubmit"> 
+    <form @submit.prevent="onSubmit" @reset="reset"> 
       <div>
         <label>Naslov</label>
         <br />
-        <input v-model="post.title" />
+        <input required="required" minlength="2" v-model="post.title" />
       </div>
       <hr />
       <div>
         <label>Tekst</label>
         <br />
-        <input v-model="post.text" />
+        <input required="required" maxlength="300" v-model="post.text" />
       </div>
       <hr />
       <div>
         <button type="submit">
           Postavi novi post
+        </button>
+        <button type="reset">
+          Resetuj unos
         </button>
       </div>
     </form>
@@ -44,6 +47,11 @@ export default {
         .catch(e => {
           alert(e)
         })
+    },
+
+    reset() {
+      this.post.title = ''
+      this.post.text = ''
     }
   }
 }
