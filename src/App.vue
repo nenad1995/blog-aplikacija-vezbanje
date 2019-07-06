@@ -8,6 +8,11 @@
             Postovi
           </router-link>
         </li>
+        <li>
+          <router-link :to="{ name: 'add' }">
+            Dodaj Post
+          </router-link>
+        </li>
       </ul>
     </nav>
     <router-view />
