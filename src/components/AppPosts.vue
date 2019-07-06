@@ -4,6 +4,11 @@
       <h3>{{ post.title }}</h3>
       <div>{{ post.text }}</div>
       <div>{{ post.createdAt }}</div>
+      <div>
+        <router-link :to="{ name: 'view', params: { id: post.id } }">
+          View Post
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
