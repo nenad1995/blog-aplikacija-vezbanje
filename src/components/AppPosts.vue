@@ -16,6 +16,9 @@
             Delete Post
           </button>
         </div>
+        <div>
+          <span>Number of comments: {{ post.comments.length }}</span>
+        </div>
       </div>
     </div>
   </div>
