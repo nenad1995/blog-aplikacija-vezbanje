@@ -2,7 +2,7 @@
   <div>
     <h3>{{ post.title }}</h3>
     <div>{{ post.text }}</div>
-    <div>{{ post.createdAt }}</div>
+    <div>{{ post.createdAt | formatDate }}</div>
     <add-comment @commentAdded="addComment"></add-comment>
     <comment-list :comments="comments"></comment-list>
   </div>
@@ -12,6 +12,7 @@
 import { postsService } from '../services/Posts'
 import AddComment from './AddComment.vue'
 import CommentList from './CommentList.vue'
+import { DateMixin } from '../mixins'
 
 export default {
   components: {
@@ -24,6 +25,8 @@ export default {
       post: {}
     }
   },
+
+  mixins: [ DateMixin ],
 
   methods: {
     addComment(comment) {
