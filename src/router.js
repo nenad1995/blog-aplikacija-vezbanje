@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import AppPosts from './components/AppPosts'
 import SinglePost from './components/SinglePost'
 import AddPost from './components/AddPost'
@@ -11,6 +12,7 @@ const routes = [
   { path: '/posts', component: AppPosts, name: "posts" },
   { path: '/posts/:id', component: SinglePost, name: "view" },
   { path: '/add', component: AddPost, name: "add" },
+  { path: '/edit/:id', component: AddPost, name: "edit" },
 ]
 
 export const router = new VueRouter({

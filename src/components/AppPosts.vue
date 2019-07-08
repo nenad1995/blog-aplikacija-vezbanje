@@ -8,6 +8,9 @@
         <router-link :to="{ name: 'view', params: { id: post.id } }">
           View Post
         </router-link>
+        <router-link :to="{ name: 'edit', params: { id: post.id } }">
+          Edit Post
+        </router-link>
       </div>
     </div>
   </div>
@@ -22,11 +25,13 @@ export default {
       posts: []
     }
   },
-
-  created() {
+  
+  beforeRouteEnter(to, from, next) {
     postsService.getAll()
       .then(response => {
-        this.posts = response.data
+        next(vm => {
+          vm.posts = response.data
+        })
       })
       .catch(e => {
         alert(e)
